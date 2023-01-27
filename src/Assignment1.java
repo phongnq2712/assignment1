@@ -74,15 +74,12 @@ public class Assignment1 {
 				break;
 			
 			case 3:
-				System.out.println("Enter B for Bills, C for Cheques:");
-				scanner.nextLine();
-				String typeOfPayment = scanner.nextLine();
 				if(objects.size() > 0) {
-					if("C".equals(typeOfPayment)) {
-						// print cheque of employees
-						Cheque cheque = new Cheque();
-						cheque.printBillNCheque(objects);
-					}
+					// print cheque of employees
+					Cheque cheque = new Cheque();
+					cheque.printBillNCheque(objects);
+					// print bills of company
+					
 				} else {
 					System.out.println("No data found to issue cheque/bill");
 				}

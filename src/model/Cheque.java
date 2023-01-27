@@ -8,7 +8,6 @@ import java.util.ArrayList;
  *
  */
 public class Cheque extends Payment implements IPayment {
-	private int chequeNumber;
 
 	public Cheque() {
 		super();
@@ -19,14 +18,6 @@ public class Cheque extends Payment implements IPayment {
 		this.chequeNumber = chequeNumber;
 		this.payeeName = payeeName;
 		this.amount = amount;
-	}
-
-	public int getChequeNumber() {
-		return chequeNumber;
-	}
-
-	public void setChequeNumber(int chequeNumber) {
-		this.chequeNumber = chequeNumber;
 	}
 
 	@Override

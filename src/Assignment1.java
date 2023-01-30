@@ -1,10 +1,8 @@
-import java.time.DayOfWeek;
-import java.time.Month;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import model.Bill;
 import model.Cheque;
-import model.Employee;
 import model.FullTimeEmp;
 import model.PartTimeEmp;
 
@@ -70,7 +68,26 @@ public class Assignment1 {
 				break;
 			case 2:
 				// Add a bill
-				
+				System.out.println("Enter name of the company:");
+				scanner.nextLine();
+				String company = scanner.nextLine();
+				System.out.println("Enter the bill amount:");
+				float amount = scanner.nextFloat();
+				System.out.println("Enter the day:");
+				int day = scanner.nextInt();
+				System.out.println("Enter the month: (Jan, Feb, ... Dec)");
+				scanner.nextLine();
+				String month = scanner.nextLine();
+				System.out.println("Enter the year:");
+				int year = scanner.nextInt();
+				ArrayList<Object> billData = new ArrayList<>();
+				billData.add(company);
+				billData.add(amount);
+				billData.add(day);
+				billData.add(month);
+				billData.add(year);
+				Bill bill = new Bill();
+				objects.add(bill.addNewBill(billData));
 				break;
 			
 			case 3:
@@ -79,6 +96,8 @@ public class Assignment1 {
 					Cheque cheque = new Cheque();
 					cheque.printBillNCheque(objects);
 					// print bills of company
+					Bill bills = new Bill();
+					bills.printBillNCheque(objects);
 					
 				} else {
 					System.out.println("No data found to issue cheque/bill");

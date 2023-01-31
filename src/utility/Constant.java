@@ -1,9 +1,11 @@
 package utility;
 
 /**
- * 
- * @author phong
- *
+ * Assignment 1
+ * Student 1: 	Quoc Phong Ngo - 40230574
+ * Student 2: 	
+ *  
+ * Constant class
  */
 public class Constant {
 	public static final int ECHELON_1 = 15;

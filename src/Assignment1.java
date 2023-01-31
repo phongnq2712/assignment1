@@ -9,10 +9,10 @@ import model.PartTimeEmp;
 
 /**
  * Assignment 1
- * Name: 		Quoc Phong Ngo
- * Student ID: 	40230574
- * @author phong
- *
+ * Student 1: 	Quoc Phong Ngo - 40230574
+ * Student 2: 	
+ *  
+ * 
  */
 public class Assignment1 {
 
@@ -31,6 +31,7 @@ public class Assignment1 {
 			int cmd = scanner.nextInt();
 			switch (cmd){
 			case 1:
+				// Add new employee
 				System.out.println("Enter employee type (F for Full-time, P for Part-time):");
 				scanner.nextLine();
 				String empType = scanner.nextLine();				
@@ -101,6 +102,7 @@ public class Assignment1 {
 				break;
 			
 			case 3:
+				// issue cheques
 				if(objects.size() > 0) {
 					for (int i = 0; i < objects.size(); i++) {
 						if(objects.get(i).toString() != null) {
@@ -113,6 +115,7 @@ public class Assignment1 {
 												
 				break;
 			case 4:
+				// Exit
 				scanner.close();
 				System.out.println("Exiting...");
 				return;

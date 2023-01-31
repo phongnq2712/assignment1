@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import utility.Constant;
 
 /**
- * 
- * @author phong
- *
+ * Assignment 1
+ * Student 1: 	Quoc Phong Ngo - 40230574
+ * Student 2: 	
+ *  
+ * PartTimeEmp class
  */
 public class PartTimeEmp extends Employee implements IEmployee {
 	

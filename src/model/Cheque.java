@@ -1,9 +1,11 @@
 package model;
 
 /**
- * 
- * @author phong
- *
+ * Assignment 1
+ * Student 1: 	Quoc Phong Ngo - 40230574
+ * Student 2: 	
+ *  
+ * Cheque class
  */
 public class Cheque extends Payment {
 

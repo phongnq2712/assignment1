@@ -1,5 +1,12 @@
 package model;
 
+/**
+ * Assignment 1
+ * Student 1: 	Quoc Phong Ngo - 40230574
+ * Student 2: 	
+ *  
+ * Payment class
+ */
 public abstract class Payment {
 	
 	protected int chequeNumber;

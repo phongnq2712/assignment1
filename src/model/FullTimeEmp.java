@@ -1,9 +1,14 @@
 package model;
 
-/**
- * 
- */
 import java.util.ArrayList;
+
+/**
+ * Assignment 1
+ * Student 1: 	Quoc Phong Ngo - 40230574
+ * Student 2: 	
+ *  
+ * FullTimeEmp class
+ */
 
 public class FullTimeEmp extends Employee implements IEmployee {
 	

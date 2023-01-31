@@ -8,9 +8,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * 
- * @author phong
- *
+ * Assignment 1
+ * Student 1: 	Quoc Phong Ngo - 40230574
+ * Student 2: 	
+ *  
+ * Bill class
  */
 public class Bill extends Payment {
 

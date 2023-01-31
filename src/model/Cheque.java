@@ -22,7 +22,7 @@ public class Cheque extends Payment {
 
  	@Override
  	public String toString() {
- 		return "Cheque No:" + chequeNumber + ", Payee Name:" + payeeName + ", Amount:" + amount;
+ 		return "Cheque No:" + chequeNumber + ", Payee Name:" + payeeName + ", Amount:" + String.format("%.02f", amount);
  	}
 	
 }

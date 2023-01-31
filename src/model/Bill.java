@@ -116,7 +116,7 @@ public class Bill extends Payment {
 		LocalDate lastDateOfMonth= currentDate.withDayOfMonth(currentDate.getMonth().length(currentDate.isLeapYear()));
 
 		if(isBillDueThisMonth(enteredDate, lastDateOfMonth)) {
-			return "Cheque No:" + chequeNumber + ", Payee Name:" + payeeName + ", Amount:" + amount + ", Due Date: " + day + "-" + month + "-" + year;
+			return "Cheque No:" + chequeNumber + ", Payee Name:" + payeeName + ", Amount:" + String.format("%.02f", amount) + ", Due Date: " + day + "-" + month + "-" + year;
 		}
 		else {
 			return null;

@@ -1,20 +1,10 @@
 package model;
 
 public abstract class Payment {
-	
-	protected int chequeNumber;
-	
+		
 	protected String payeeName;
 	
 	protected double amount;
-	
-	public int getChequeNumber() {
-		return chequeNumber;
-	}
-
-	public void setChequeNumber(int chequeNumber) {
-		this.chequeNumber = chequeNumber;
-	}
 
 	public String getPayeeName() {
 		return payeeName;

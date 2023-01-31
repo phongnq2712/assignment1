@@ -1,7 +1,7 @@
-package model;
+// package model;
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 
-public interface IPayment {
-	void printBillNCheque(ArrayList<Object> listOfObjects);
-}
+// public interface IPayment {
+// 	void printBillNCheque(ArrayList<Object> listOfObjects);
+// }

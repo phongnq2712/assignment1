@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import model.Bill;
-import model.Cheque;
 import model.FullTimeEmp;
 import model.PartTimeEmp;
 
@@ -92,25 +91,26 @@ public class Assignment1 {
 			
 			case 3:
 				if(objects.size() > 0) {
-					// print cheque of employees
-					Cheque cheque = new Cheque();
-					cheque.printBillNCheque(objects);
-					// print bills of company
-					Bill bills = new Bill();
-					bills.printBillNCheque(objects);
+					int number = 1;
+					for (int i = 0; i < objects.size(); i++) {
+						
+						if(objects.get(i).toString() != null) {
+							System.out.println("Cheque No-"+ number++ + objects.get(i).toString());
+						}
+					}
 					
 				} else {
-					System.out.println("No data found to issue cheque/bill");
+					System.out.println("No cheques required.");
 				}
 												
 				break;
 			case 4:
 				scanner.close();
-				System.out.println("shutting down...");
+				System.out.println("Exiting...");
 				return;
 				
 			default:
-				throw new IllegalArgumentException("Unexpected value: " + cmd);
+				System.out.println("Enter right value");
 			}
 		}
 	}

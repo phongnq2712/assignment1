@@ -87,4 +87,9 @@ public class PartTimeEmp extends Employee implements IEmployee {
 		return null;
 	}
 
+	@Override
+	public String toString() {
+		return " Payee Name:" + firstName +" "+lastName + ", Amount:" + salary;
+	}
+
 }

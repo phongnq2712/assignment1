@@ -24,21 +24,14 @@ public class Bill extends Payment {
 		super();
 	}
 
-	public Bill(String payeeName, double amount, int day, String month, int year) {
+	public Bill(int chequeNumber, String payeeName, double amount, int day, String month, int year) {
 		super();
+		this.chequeNumber = chequeNumber;
 		this.payeeName = payeeName;
 		this.amount = amount;
 		this.day = day;
 		this.month = month;
 		this.year = year;
-	}
-
-	public double getamount() {
-		return amount;
-	}
-
-	public void setamount(float amount) {
-		this.amount = amount;
 	}
 
 	public String getMonth() {
@@ -67,18 +60,20 @@ public class Bill extends Payment {
 
 	public Bill addNewBill(ArrayList<Object> billData) {
 		if(billData.size() > 0) {
+			int seqCheque = 0;
 			String payeeNameName = "";
 			float amt = 0;
 			int dayNum = 0;
 			String monthName = "";
 			int yearNum = 0;
 
-			payeeNameName = (String) billData.get(0);
-			amt = (float) billData.get(1);
-			dayNum = (int) billData.get(2);
-			monthName = (String) billData.get(3);
-			yearNum = (int) billData.get(4);
-			Bill bill = new Bill(payeeNameName, amt, dayNum, monthName, yearNum);
+			seqCheque = (int)billData.get(0);
+			payeeNameName = (String) billData.get(1);
+			amt = (float) billData.get(2);
+			dayNum = (int) billData.get(3);
+			monthName = (String) billData.get(4);
+			yearNum = (int) billData.get(5);
+			Bill bill = new Bill(seqCheque, payeeNameName, amt, dayNum, monthName, yearNum);
 			return bill;
 		}
 		else {
@@ -119,7 +114,7 @@ public class Bill extends Payment {
 		LocalDate lastDateOfMonth= currentDate.withDayOfMonth(currentDate.getMonth().length(currentDate.isLeapYear()));
 
 		if(isBillDueThisMonth(enteredDate, lastDateOfMonth)) {
-			return " Payee Name:" + payeeName + ", Amount:" + amount + ", Due Date: " + day + "-" + month + "-" + year;
+			return "Cheque No:" + chequeNumber + ", Payee Name:" + payeeName + ", Amount:" + amount + ", Due Date: " + day + "-" + month + "-" + year;
 		}
 		else {
 			return null;

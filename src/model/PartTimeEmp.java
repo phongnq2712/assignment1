@@ -3,6 +3,11 @@ package model;
 import java.util.ArrayList;
 import utility.Constant;
 
+/**
+ * 
+ * @author phong
+ *
+ */
 public class PartTimeEmp extends Employee implements IEmployee {
 	
 	private int echelon;

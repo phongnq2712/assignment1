@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import model.Bill;
+import model.Cheque;
+import model.Employee;
 import model.FullTimeEmp;
 import model.PartTimeEmp;
 
@@ -17,6 +19,8 @@ public class Assignment1 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		ArrayList<Object> objects = new ArrayList<Object>();
+		int seqCheque = 1;
+		float salaryCheque = 0;
 		while(true) {
 			System.out.println("-----------------------");
 			System.out.println("1. Add an employee");
@@ -51,7 +55,8 @@ public class Assignment1 {
 					float empSalary = scanner.nextFloat();
 					FullTimeEmp fullTimeEmp = new FullTimeEmp();
 					empData.add(empSalary);
-					objects.add(fullTimeEmp.addNewEmployee(empData));
+					Employee newFullTimeEmp = fullTimeEmp.addNewEmployee(empData);
+					salaryCheque = newFullTimeEmp.getSalary();
 				} else if ("P".equals(empType)) {
 					// part-time employee
 					System.out.println("Enter echelon:");
@@ -61,8 +66,12 @@ public class Assignment1 {
 					int hourWorked = scanner.nextInt();
 					empData.add(hourWorked);
 					PartTimeEmp partTimeEmp = new PartTimeEmp();
-					objects.add(partTimeEmp.addNewEmployee(empData));
+					Employee newPartTimeEmp = partTimeEmp.addNewEmployee(empData);
+					salaryCheque = newPartTimeEmp.getSalary();
 				}
+				// add new cheque
+				Cheque cheque = new Cheque(seqCheque ++, empFirstName + " " + empLastName, salaryCheque);
+				objects.add(cheque);
 				
 				break;
 			case 2:
@@ -80,6 +89,7 @@ public class Assignment1 {
 				System.out.println("Enter the year:");
 				int year = scanner.nextInt();
 				ArrayList<Object> billData = new ArrayList<>();
+				billData.add(seqCheque ++);
 				billData.add(company);
 				billData.add(amount);
 				billData.add(day);
@@ -87,18 +97,16 @@ public class Assignment1 {
 				billData.add(year);
 				Bill bill = new Bill();
 				objects.add(bill.addNewBill(billData));
+				
 				break;
 			
 			case 3:
 				if(objects.size() > 0) {
-					int number = 1;
 					for (int i = 0; i < objects.size(); i++) {
-						
 						if(objects.get(i).toString() != null) {
-							System.out.println("Cheque No-"+ number++ + objects.get(i).toString());
+							System.out.println(objects.get(i).toString());
 						}
 					}
-					
 				} else {
 					System.out.println("No cheques required.");
 				}

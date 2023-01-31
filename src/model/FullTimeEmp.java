@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * 
+ */
 import java.util.ArrayList;
 
 public class FullTimeEmp extends Employee implements IEmployee {

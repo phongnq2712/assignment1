@@ -26,7 +26,7 @@ public class Bill extends Payment {
 		super();
 	}
 
-	public Bill(int chequeNumber, String payeeName, double amount, int day, String month, int year) {
+	public Bill(int chequeNumber, String payeeName, float amount, int day, String month, int year) {
 		super();
 		this.chequeNumber = chequeNumber;
 		this.payeeName = payeeName;

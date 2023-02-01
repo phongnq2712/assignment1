@@ -13,7 +13,7 @@ public class Cheque extends Payment {
  		super();
  	}
 	
- 	public Cheque(int chequeNumber, String payeeName, double amount) {
+ 	public Cheque(int chequeNumber, String payeeName, float amount) {
  		super();
  		this.chequeNumber = chequeNumber;
  		this.payeeName = payeeName;

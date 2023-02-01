@@ -13,7 +13,7 @@ public abstract class Payment {
 		
 	protected String payeeName;
 	
-	protected double amount;
+	protected float amount;
 	
 	public int getChequeNumber() {
 		return chequeNumber;
@@ -31,11 +31,11 @@ public abstract class Payment {
 		this.payeeName = payeeName;
 	}
 
-	public double getAmount() {
+	public float getAmount() {
 		return amount;
 	}
 
-	public void setAmount(double amount) {
+	public void setAmount(float amount) {
 		this.amount = amount;
 	}
 	

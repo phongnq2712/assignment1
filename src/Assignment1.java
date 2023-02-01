@@ -10,7 +10,7 @@ import model.PartTimeEmp;
 /**
  * Assignment 1
  * Student 1: 	Quoc Phong Ngo - 40230574
- * Student 2: 	
+ * Student 2: 	Jimil Suchitkumar Prajapati - 40205477
  *  
  * 
  */
@@ -102,7 +102,7 @@ public class Assignment1 {
 				break;
 			
 			case 3:
-				// issue cheques
+				// issue cheques using polymorphism
 				if(objects.size() > 0) {
 					for (int i = 0; i < objects.size(); i++) {
 						if(objects.get(i).toString() != null) {

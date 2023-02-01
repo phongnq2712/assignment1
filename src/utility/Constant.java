@@ -3,7 +3,7 @@ package utility;
 /**
  * Assignment 1
  * Student 1: 	Quoc Phong Ngo - 40230574
- * Student 2: 	
+ * Student 2: 	Jimil Suchitkumar Prajapati - 40205477
  *  
  * Constant class
  */

@@ -10,7 +10,7 @@ import java.util.Date;
 /**
  * Assignment 1
  * Student 1: 	Quoc Phong Ngo - 40230574
- * Student 2: 	
+ * Student 2: 	Jimil Suchitkumar Prajapati - 40205477
  *  
  * Bill class
  */
@@ -59,7 +59,8 @@ public class Bill extends Payment {
 	public void setYear(int year) {
 		this.year = year;
 	}
-
+	
+	//adding a bill information.
 	public Bill addNewBill(ArrayList<Object> billData) {
 		if(billData.size() > 0) {
 			int seqCheque = 0;
@@ -89,7 +90,7 @@ public class Bill extends Payment {
 		} else if (currentDate.isAfter(lastDateOfMonth)) {
 			return false;
 		} else {
-			return true; //both are same
+			return true; //both dates are same
 		}
     }
 
@@ -99,13 +100,15 @@ public class Bill extends Payment {
 		LocalDate enteredDate = LocalDate.now(); //dummy value, it'll change in try block.
 		//parsing date into year-month-day
 		SimpleDateFormat formatter = new SimpleDateFormat("MMM");
+
 		try {
 			Date monthAbbriviation = formatter.parse(this.getMonth());
 			formatter.applyPattern("M");
 			int monthNumber = Integer.parseInt(formatter.format(monthAbbriviation)); //to get 1 instead of Jan
 
 			enteredDate = LocalDate.of(this.getYear(), monthNumber, this.getDay()); //YYYY-MM-DD
-		} catch (ParseException e) {
+		} 
+		catch (ParseException e) {
 			e.printStackTrace();
 		}
 
@@ -115,7 +118,7 @@ public class Bill extends Payment {
 		//last date of current month
 		LocalDate lastDateOfMonth= currentDate.withDayOfMonth(currentDate.getMonth().length(currentDate.isLeapYear()));
 
-		if(isBillDueThisMonth(enteredDate, lastDateOfMonth)) {
+		if(isBillDueThisMonth(enteredDate, lastDateOfMonth)) { //print only if the bill is due current month.
 			return "Cheque No:" + chequeNumber + ", Payee Name:" + payeeName + ", Amount:" + String.format("%.02f", amount) + ", Due Date: " + day + "-" + month + "-" + year;
 		}
 		else {

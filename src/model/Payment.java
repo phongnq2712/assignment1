@@ -39,5 +39,6 @@ public abstract class Payment {
 		this.amount = amount;
 	}
 	
+	public abstract String toString();
 	
 }

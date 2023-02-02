@@ -13,5 +13,6 @@ import java.util.ArrayList;
 public interface IEmployee {
 	
 	Employee addNewEmployee(ArrayList<Object> empData);
+	float calculateSalary(int echelon, int hourWorked);
 	String toString(); //makes sure that it has a method to print cheques
 }

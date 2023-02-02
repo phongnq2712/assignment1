@@ -51,4 +51,11 @@ public class FullTimeEmp extends Employee implements IEmployee {
 		return " Payee Name:" + firstName +" "+lastName + ", Amount:" + salary;
 	}
 
+	@Override
+	public float calculateSalary(int echelon, int hourWorked) {
+		return salary;
+	}
+
+	
+
 }

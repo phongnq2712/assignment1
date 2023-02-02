@@ -64,28 +64,7 @@ public class PartTimeEmp extends Employee implements IEmployee {
 			empLastName = (String) empData.get(3);
 			echelon = (int) empData.get(4);
 			hourWorked = (int) empData.get(5);
-			if(echelon > 0 && hourWorked > 0) {
-				switch (echelon) {
-				case 1:
-					empSalary = Constant.ECHELON_1  * hourWorked;
-					break;
-				case 2:
-					empSalary = Constant.ECHELON_2  * hourWorked;
-					break;
-				case 3:
-					empSalary = Constant.ECHELON_3  * hourWorked;
-					break;
-				case 4:
-					empSalary = Constant.ECHELON_4  * hourWorked;
-					break;
-				case 5:
-					empSalary = Constant.ECHELON_5  * hourWorked;
-					break;
-
-				default:
-					break;
-				}
-			}
+			empSalary = calculateSalary(echelon, hourWorked);
 			PartTimeEmp partTimeEmp = new PartTimeEmp(empID, empAge, empFirstName, empLastName, 
 					echelon, hourWorked, empSalary);
 			
@@ -97,6 +76,35 @@ public class PartTimeEmp extends Employee implements IEmployee {
 	@Override
 	public String toString() {
 		return " Payee Name:" + firstName +" "+lastName + ", Amount:" + salary;
+	}
+
+	@Override
+	public float calculateSalary(int echelon, int hourWorked) {
+		float empSalary = 0;
+		if(echelon > 0 && hourWorked > 0) {
+			switch (echelon) {
+			case 1:
+				empSalary = Constant.ECHELON_1  * hourWorked;
+				break;
+			case 2:
+				empSalary = Constant.ECHELON_2  * hourWorked;
+				break;
+			case 3:
+				empSalary = Constant.ECHELON_3  * hourWorked;
+				break;
+			case 4:
+				empSalary = Constant.ECHELON_4  * hourWorked;
+				break;
+			case 5:
+				empSalary = Constant.ECHELON_5  * hourWorked;
+				break;
+
+			default:
+				break;
+			}
+		}
+		
+		return empSalary;
 	}
 
 }

@@ -8,7 +8,7 @@ package model;
  * Employee class
  */
 
-public abstract class Employee {
+public abstract class Employee implements IEmployee {
 	
 	protected String firstName;
 	

@@ -124,7 +124,6 @@ public class Bill extends Payment {
 		else {
 			return null;
 		}
-
 	}
 	
 }

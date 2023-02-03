@@ -10,26 +10,25 @@ import utility.Constant;
  *  
  * PartTimeEmp class
  */
-public class PartTimeEmp extends Employee implements IEmployee {
+public class PartTimeEmp extends Employee {
 	
 	private int echelon;
 	
-	private int numberOfHour;
+	private int hourWorked;
 	
 	public PartTimeEmp() {
 		super();
 	}
 
 	public PartTimeEmp(int ID, int age, String lastName, 
-			String firstName, int echelon, int numberOfHour, float salary) {
+			String firstName, int echelon, int hourWorked) {
 		super();
 		this.ID = ID;
 		this.age = age;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.echelon = echelon;
-		this.numberOfHour = numberOfHour;
-		this.salary = salary;
+		this.hourWorked = hourWorked;
 	}
 	
 	public int getEchelon() {
@@ -40,12 +39,12 @@ public class PartTimeEmp extends Employee implements IEmployee {
 		this.echelon = echelon;
 	}
 
-	public int getNumberOfHour() {
-		return numberOfHour;
+	public int getHourWorked() {
+		return hourWorked;
 	}
 
-	public void setNumberOfHour(int numberOfHour) {
-		this.numberOfHour = numberOfHour;
+	public void setHourWorked(int hourWorked) {
+		this.hourWorked = hourWorked;
 	}
 
 	@Override
@@ -55,7 +54,6 @@ public class PartTimeEmp extends Employee implements IEmployee {
 			int empAge = 0;
 			String empFirstName = "";
 			String empLastName = "";
-			float empSalary = 0;
 			int echelon = 0;
 			int hourWorked = 0;
 			empID = (int) empData.get(0);
@@ -64,9 +62,9 @@ public class PartTimeEmp extends Employee implements IEmployee {
 			empLastName = (String) empData.get(3);
 			echelon = (int) empData.get(4);
 			hourWorked = (int) empData.get(5);
-			empSalary = calculateSalary(echelon, hourWorked);
+			
 			PartTimeEmp partTimeEmp = new PartTimeEmp(empID, empAge, empFirstName, empLastName, 
-					echelon, hourWorked, empSalary);
+					echelon, hourWorked);
 			
 			return partTimeEmp;
 		}
@@ -74,12 +72,7 @@ public class PartTimeEmp extends Employee implements IEmployee {
 	}
 
 	@Override
-	public String toString() {
-		return " Payee Name:" + firstName +" "+lastName + ", Amount:" + salary;
-	}
-
-	@Override
-	public float calculateSalary(int echelon, int hourWorked) {
+	public float calculateSalary() {
 		float empSalary = 0;
 		if(echelon > 0 && hourWorked > 0) {
 			switch (echelon) {

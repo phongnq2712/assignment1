@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * FullTimeEmp class
  */
 
-public class FullTimeEmp extends Employee implements IEmployee {
+public class FullTimeEmp extends Employee {
 	
 	public FullTimeEmp() {
 		super();
@@ -47,15 +47,8 @@ public class FullTimeEmp extends Employee implements IEmployee {
 	}
 
 	@Override
-	public String toString() {
-		return " Payee Name:" + firstName +" "+lastName + ", Amount:" + salary;
-	}
-
-	@Override
-	public float calculateSalary(int echelon, int hourWorked) {
+	public float calculateSalary() {
 		return salary;
 	}
-
-	
 
 }

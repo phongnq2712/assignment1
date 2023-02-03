@@ -57,7 +57,7 @@ public class Assignment1 {
 					FullTimeEmp fullTimeEmp = new FullTimeEmp();
 					empData.add(empSalary);
 					Employee newFullTimeEmp = fullTimeEmp.addNewEmployee(empData);
-					salaryCheque = newFullTimeEmp.getSalary();
+					salaryCheque = newFullTimeEmp.calculateSalary();
 				} else if ("P".equals(empType)) {
 					// part-time employee
 					System.out.println("Enter echelon:");
@@ -68,7 +68,7 @@ public class Assignment1 {
 					empData.add(hourWorked);
 					PartTimeEmp partTimeEmp = new PartTimeEmp();
 					Employee newPartTimeEmp = partTimeEmp.addNewEmployee(empData);
-					salaryCheque = newPartTimeEmp.getSalary();
+					salaryCheque = newPartTimeEmp.calculateSalary();
 				}
 				// add new cheque
 				Cheque cheque = new Cheque(seqCheque ++, empFirstName + " " + empLastName, salaryCheque);
